@@ -43,7 +43,7 @@
 
 #pragma mark - MHOTPViewDelegate
 
-- (void)optViewHasBennFullfilled:(MHOTPView *)inputView {
+- (void)optViewHasBeenFullfilled:(MHOTPView *)inputView {
     [self.view endEditing:YES];
     [self startCheckOTP];
 }

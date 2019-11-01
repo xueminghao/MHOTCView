@@ -8,78 +8,12 @@
 
 #import "MHOTPView.h"
 
+#import "MHTextPosition.h"
+#import "MHTextRange.h"
+
 /** HEX颜色 */
 #define MHColorHex(c) [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:((c)&0xFF)/255.0 alpha:1.0]
 #define MHColorHexA(c,a) [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:((c)&0xFF)/255.0 alpha:(a)]
-
-
-@interface FTTextPosition : UITextPosition
-/**
-  字符索引。从0开始
- */
-@property (nonatomic, assign) NSUInteger index;
-
-@end
-
-@implementation FTTextPosition
-
-+ (instancetype)textPositionWithIndex:(NSUInteger)index {
-    FTTextPosition *position = [FTTextPosition new];
-    position.index = index;
-    return position;
-}
-
-@end
-
-@interface FTTextRange : UITextRange
-
-@property (nonatomic, strong) FTTextPosition *startPosition;
-@property (nonatomic, strong) FTTextPosition *endPosition;
-
-@property (nonatomic, readonly) NSUInteger startIndex;
-@property (nonatomic, readonly) NSUInteger endIndex;
-@property (nonatomic, readonly) NSUInteger length;
-
-@end
-
-@implementation FTTextRange
-
-+ (instancetype)textRangeWithStartPosition:(FTTextPosition *)startPosition endIndex:(FTTextPosition *)endPosition {
-    FTTextRange *range = [FTTextRange new];
-    range.startPosition = startPosition;
-    range.endPosition = endPosition;
-    return range;
-}
-
-#pragma mark - Convience methods
-
-- (NSUInteger)startIndex {
-    return self.startPosition.index;
-}
-
-- (NSUInteger)endIndex {
-    return self.endPosition.index;
-}
-
-- (NSUInteger)length {
-    return MAX(self.endIndex - self.startIndex + 1, 0);
-}
-
-#pragma mark - Overrides
-
-- (UITextPosition *)start {
-    return self.startPosition;
-}
-
-- (UITextPosition *)end {
-    return self.endPosition;
-}
-
-- (BOOL)isEmpty {
-    return self.endIndex < self.startIndex;
-}
-
-@end
 
 @interface MHOTPView ()
 
@@ -210,7 +144,7 @@
     if (!self.text) {
         return nil;
     }
-    FTTextRange *textRange = (FTTextRange *)range;
+    MHTextRange *textRange = (MHTextRange *)range;
     if (!textRange) {
         return nil;
     }
@@ -224,7 +158,7 @@
     if (!self.text) {
         return;
     }
-    FTTextRange *textRange = (FTTextRange *)range;
+    MHTextRange *textRange = (MHTextRange *)range;
     if (!textRange) {
         return;
     }
@@ -237,28 +171,28 @@
 }
 
 - (UITextPosition *)beginningOfDocument {
-    return [FTTextPosition textPositionWithIndex:0];
+    return [MHTextPosition textPositionWithIndex:0];
 }
 
 - (UITextPosition *)endOfDocument {
-    return [FTTextPosition textPositionWithIndex:self.text.length - 1];
+    return [MHTextPosition textPositionWithIndex:self.text.length - 1];
 }
 
 - (UITextRange *)textRangeFromPosition:(UITextPosition *)fromPosition toPosition:(UITextPosition *)toPosition {
-    FTTextPosition *from = (FTTextPosition *)fromPosition;
-    FTTextPosition *to = (FTTextPosition *)toPosition;
+    MHTextPosition *from = (MHTextPosition *)fromPosition;
+    MHTextPosition *to = (MHTextPosition *)toPosition;
     if (!from || !to) {
         return nil;
     }
-    return [FTTextRange textRangeWithStartPosition:from endIndex:to];
+    return [MHTextRange textRangeWithStartPosition:from endIndex:to];
 }
 
 - (UITextPosition *)positionFromPosition:(UITextPosition *)position offset:(NSInteger)offset {
-    FTTextPosition *textPosition = (FTTextPosition *)position;
+    MHTextPosition *textPosition = (MHTextPosition *)position;
     if (!textPosition) {
         return nil;
     }
-    return [FTTextPosition textPositionWithIndex:textPosition.index + offset];
+    return [MHTextPosition textPositionWithIndex:textPosition.index + offset];
 }
 
 - (UITextPosition *)positionFromPosition:(UITextPosition *)position inDirection:(UITextLayoutDirection)direction offset:(NSInteger)offset {
@@ -267,8 +201,8 @@
 }
 
 - (NSComparisonResult)comparePosition:(UITextPosition *)position toPosition:(UITextPosition *)other {
-    FTTextPosition *textPosition = (FTTextPosition *)position;
-    FTTextPosition *otherPosition = (FTTextPosition *)other;
+    MHTextPosition *textPosition = (MHTextPosition *)position;
+    MHTextPosition *otherPosition = (MHTextPosition *)other;
     if (!textPosition || !otherPosition) {
         return NSOrderedSame;
     }
@@ -282,8 +216,8 @@
 }
 
 - (NSInteger)offsetFromPosition:(UITextPosition *)from toPosition:(UITextPosition *)toPosition {
-    FTTextPosition *fromPosition = (FTTextPosition *)from;
-    FTTextPosition *to = (FTTextPosition *)toPosition;
+    MHTextPosition *fromPosition = (MHTextPosition *)from;
+    MHTextPosition *to = (MHTextPosition *)toPosition;
     if (!from || !to) {
         return 0;
     }
@@ -394,8 +328,8 @@
     _text = text;
     [self setNeedsDisplay];
     if (_text.length >= self.numberOfBits) {
-        if ([self.delegate respondsToSelector:@selector(optViewHasBennFullfilled:)]) {
-            [self.delegate optViewHasBennFullfilled:self];
+        if ([self.delegate respondsToSelector:@selector(optViewHasBeenFullfilled:)]) {
+            [self.delegate optViewHasBeenFullfilled:self];
         }
     }
 }

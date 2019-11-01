@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MHOTPView <NSObject>
 
-- (void)optViewHasBennFullfilled:(MHOTPView *)optView;
+- (void)optViewHasBeenFullfilled:(MHOTPView *)optView;
 
 @end
 
-@interface MHOTPView : UIView<UITextInput>
+@interface MHOTPView : UIView <UITextInput>
 
 @property (nonatomic, weak) id<MHOTPView> delegate;
 
