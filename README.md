@@ -22,7 +22,7 @@ pod 'MHOTCView'
 
 ## Author
 
-xueminghao, minghaoxue@clubfactory.com
+xueminghao, xue_minghao@qq.com
 
 ## License
 

@@ -9,6 +9,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
+  - Masonry (1.1.0)
   - MHOTCView (0.1.0)
   - Specta (1.0.7)
 
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Expecta
   - "Expecta+Snapshots"
   - FBSnapshotTestCase
+  - Masonry
   - MHOTCView (from `../`)
   - Specta
 
@@ -24,6 +26,7 @@ SPEC REPOS:
     - Expecta
     - "Expecta+Snapshots"
     - FBSnapshotTestCase
+    - Masonry
     - Specta
 
 EXTERNAL SOURCES:
@@ -34,9 +37,10 @@ SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   "Expecta+Snapshots": dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  MHOTCView: b8e1b8deb687f7c209bfb34bbc5331065273c625
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MHOTCView: 18285928ebfa8804e61399bfd4616d9a8b854334
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
-PODFILE CHECKSUM: 142f7edce3ddcdb2b5bd89f2ccccc40f58c0fb5c
+PODFILE CHECKSUM: 5eff338451fc52e4555cf1f90bc5365f98935131
 
 COCOAPODS: 1.8.4

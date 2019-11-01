@@ -24,11 +24,11 @@ We want a opt input view which can take full control of what it looks like and w
   s.homepage         = 'https://github.com/xueminghao/MHOTCView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'xueminghao' => 'minghaoxue@clubfactory.com' }
+  s.author           = { 'xueminghao' => 'xue_minghao@qq.com' }
   s.source           = { :git => 'https://github.com/xueminghao/MHOTCView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'MHOTCView/Classes/**/*'
   
