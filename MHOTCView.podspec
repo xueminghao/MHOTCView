@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MHOTCView'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of MHOTCView.'
+  s.summary          = 'A view that used to input OTP(One time password) or OTC(One time code)'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+We want a opt input view which can take full control of what it looks like and we also want it is compatibility with system such as the autofill feature. So we subclass UIView, it is drawn by CoreGraphics and we implement the UITextInput protocol to make it compatibility with ios system
                        DESC
 
   s.homepage         = 'https://github.com/xueminghao/MHOTCView'

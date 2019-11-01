@@ -62,10 +62,10 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		758FBD1D2E166D8F6CAA285E /* Pods_MHOTCView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHOTCView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AEFC1ADC9EAC749994A2CD13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AEFC1ADC9EAC749994A2CD13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		BCC2FA2118AF127CB43B2629 /* Pods-MHOTCView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHOTCView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MHOTCView_Tests/Pods-MHOTCView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CC07AA85C3CB3801D549E368 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E23F848FAEEA4B1ED99782A7 /* MHOTCView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MHOTCView.podspec; path = ../MHOTCView.podspec; sourceTree = "<group>"; };
+		CC07AA85C3CB3801D549E368 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E23F848FAEEA4B1ED99782A7 /* MHOTCView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MHOTCView.podspec; path = ../MHOTCView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F53CFA0DF364627895CC89A4 /* Pods_MHOTCView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHOTCView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,6 @@
 				BCC2FA2118AF127CB43B2629 /* Pods-MHOTCView_Tests.debug.xcconfig */,
 				3C6309D46B164EB96CEFAA65 /* Pods-MHOTCView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -259,6 +258,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
